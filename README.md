@@ -17,9 +17,9 @@ MANTENIBILIDAD, ESCALABILIDAD
 
 SPEC: (requerimientos de desarrollo)
 
-- Solo debes de utilizar un componente ---> Patron diseño --> crear un component reutilizable
-- Cuanto menos propiedades mejor --> inicializacion de variables --> hacer defaults
-- debes de usar typescript --> crear instrucciones de como utilizar tu component mesa
+1- Solo debes de utilizar un componente ---> Patron diseño --> crear un component reutilizable
+2- Cuanto menos propiedades mejor --> inicializacion de variables --> hacer defaults
+3- debes de usar typescript --> crear instrucciones de como utilizar tu component mesa
 
 ----------------------
 
