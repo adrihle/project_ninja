@@ -1,18 +1,30 @@
 import React, { useState } from "react";
 
+type Color = React.CSSProperties['backgroundColor'];
+
 type BombillaProps = {
-  cristalColor?: React.CSSProperties['backgroundColor'],
-  turnOnColor?: React.CSSProperties['backgroundColor'],
+  colorCristal?: Color,
+  colorEncendido?: Color,
+  encender?: () => void,
 }
 
-const Bombilla = ({ cristalColor, turnOnColor = 'tomato' }: BombillaProps) => {
-  const [color, setColor] = useState(cristalColor);
+const holaEmpleado = () => {
+  alert('hola empleado');
+}
+
+const Bombilla = ({ colorCristal = 'violet', ...restoDePropiedades }: BombillaProps) => {
+  const [color, setColor] = useState(colorCristal);
+  const { colorEncendido = 'tomato', encender = holaEmpleado } = restoDePropiedades;
+  const estaEncendido = color !== colorEncendido;
 
   const onClick = () => {
     // ternario operador
     setColor((previousState) => {
-      return previousState === cristalColor ? turnOnColor : cristalColor;
+      return previousState === colorCristal ? colorEncendido : colorCristal;
     });
+    if (estaEncendido && encender) {
+      encender();
+    }
   }
 
   return (

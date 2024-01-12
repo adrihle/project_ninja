@@ -6,11 +6,11 @@ const Login = () => {
   return (
     <div>
       bombilla salon
-      <Bombilla cristalColor="red" />
+      <Bombilla onTurnColor={() => alert('hola ceo')} />
       bombilla cuarto de baño
-      <Bombilla cristalColor="aliceblue" />
+      <Bombilla cristalColor="aliceblue" turnOnColor="yellow"  />
       bombilla cocina
-      <Bombilla turnOnColor="green"/>
+      <Bombilla turnOnColor="green" />
     </div>
   )
 };

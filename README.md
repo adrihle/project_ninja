@@ -1,36 +1,26 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+REQUERIMIENTOS MESA
 
-## Getting Started
+SPEC: (requerimientos de negocio)
 
-First, run the development server:
+- TIENE QUE HABER UNA MESA EN CADA HABITACION
+- LA MESA DEL SALON, TIENE QUE TENER TRES PATAS
+- POR DEFECTO TIENE QUE TENER 4 PATAS (EN EL RESTO DE HABITACION)
+- LA MESA DEL SALON DEBE SER AZUL
+- LA MESA DEL CUARTO DE BAÑO DEBE DE SER VERDE
+- LA MESA DE LA COCINA DEBE DE SER AZUL
+- LA MESA DE LA COCINA TIENE QUE TENER UN CAJON
+- EL RESTO DE MESAS (POR DEFECTO) DEBE DE TENER DOS CAJONES
+- CUANDO HABRA EL PRIMER CAJON DEL CUARTO DE BAÑO DEBE DE SALUDARME
+- CUANDO HABRA EL SEGUNDO CAJON DEL SALON DEBE DE SALUDAR AL VECINO
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+MANTENIBILIDAD, ESCALABILIDAD
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+SPEC: (requerimientos de desarrollo)
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+- Solo debes de utilizar un componente ---> Patron diseño --> crear un component reutilizable
+- Cuanto menos propiedades mejor --> inicializacion de variables --> hacer defaults
+- debes de usar typescript --> crear instrucciones de como utilizar tu component mesa
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+----------------------
 
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+TEST (comprobara que cada punto de los spec de negocio se cumplan); ---------> extra senior
