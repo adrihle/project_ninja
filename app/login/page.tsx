@@ -1,15 +1,16 @@
 'use client'
 
-import { Button, Field, PasswordField } from "@/components";
-import BaseButton from 'antd/es/button';
+import Bombilla from "@/components/caja";
 
 const Login = () => {
   return (
     <div>
-      <Field />
-      <PasswordField />
-      <BaseButton>submit base</BaseButton>
-      <Button type="primary">Submit</Button>
+      bombilla salon
+      <Bombilla cristalColor="red" />
+      bombilla cuarto de baño
+      <Bombilla cristalColor="aliceblue" />
+      bombilla cocina
+      <Bombilla turnOnColor="green"/>
     </div>
   )
 };
