@@ -1,7 +1,7 @@
-const Chart = () => {
+const VideoStats = () => {
   return (
-  <div>Chart</div>
+  <div>Video stats</div>
   )
 };
 
-export default Chart;
+export default VideoStats;
