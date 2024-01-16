@@ -21,7 +21,7 @@ const VideoInfo = ({ name, date, visits, hashmd5, image }: VideoInfoProps) => {
         className="rounded-t-lg w-full"
       />
       <div className="p-5">
-        <h3 className="text-2xl font-bold md:text-3xl text-gray-100 mb-3">
+        <h3 className="text-2xl font-bold md:text-3xl text-black-100 mb-3">
           {name}
         </h3>
         <p className=" text-lg  font-normal text-gray-100">{date}</p>
