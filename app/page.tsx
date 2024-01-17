@@ -48,10 +48,11 @@ const Page = async (props: PageParams) => {
                 <>
                   {channel ? (
                     <main className="container mx-auto py-32 px-8">
-                      <div className="grid lg:grid-cols-3  md:grid-cols-2 grid-cols-1 gap-6 ">
-                        {videos.map((videoInfo) => (
-                          <VideoInfo key={videoInfo.name} {...videoInfo} />
-                        ))}
+                      <div className="grid lg:grid-cols-5  md:grid-cols-2 grid-cols-1 gap-6 ">
+                        {videos &&
+                          videos.map((videoInfo) => (
+                            <VideoInfo key={videoInfo.name} {...videoInfo} />
+                          ))}
                       </div>
                       <CenteredPagination>
                         <Pagination
