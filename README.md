@@ -1,26 +1,30 @@
-REQUERIMIENTOS MESA
+TODO AL INGLÉS
 
-SPEC: (requerimientos de negocio)
+Como instalar mi proyecto
 
-- TIENE QUE HABER UNA MESA EN CADA HABITACION
-- LA MESA DEL SALON, TIENE QUE TENER TRES PATAS
-- POR DEFECTO TIENE QUE TENER 4 PATAS (EN EL RESTO DE HABITACION)
-- LA MESA DEL SALON DEBE SER AZUL
-- LA MESA DEL CUARTO DE BAÑO DEBE DE SER VERDE
-- LA MESA DE LA COCINA DEBE DE SER AZUL
-- LA MESA DE LA COCINA TIENE QUE TENER UN CAJON
-- EL RESTO DE MESAS (POR DEFECTO) DEBE DE TENER DOS CAJONES
-- CUANDO HABRA EL PRIMER CAJON DEL CUARTO DE BAÑO DEBE DE SALUDARME
-- CUANDO HABRA EL SEGUNDO CAJON DEL SALON DEBE DE SALUDAR AL VECINO
+Versión Node -> node --version v20.10.0
 
-MANTENIBILIDAD, ESCALABILIDAD
+reactJS -> BASE PARA RENDERIZAR
+nextJs -> SERVER SIDE RENDIERING (framework)
 
-SPEC: (requerimientos de desarrollo)
+libreria de componentes -> ant
+estilos -> Tailwind
 
-1- Solo debes de utilizar un componente ---> Patron diseño --> crear un component reutilizable
-2- Cuanto menos propiedades mejor --> inicializacion de variables --> hacer defaults
-3- debes de usar typescript --> crear instrucciones de como utilizar tu component mesa
+// Instrucciones negocio
 
-----------------------
+// EJERCICIO
+// COCINA
 
-TEST (comprobara que cada punto de los spec de negocio se cumplan); ---------> extra senior
+ALICATAR COCINA -> LOSAS PADERES
+
+PARED 3 FRANJAS
+
+FRANJA SUPERIOR -> LOSAS REDONDAS // COLOR AZUL // COMPLETANDO EL RESTO DE LA PARED // FONDO TURQUESA // DIAMETRO 30 PIXELES
+FRANJS MEDIA -> LOSAS EN DIAGONAL // COLOR VERDE // 200 PX // 20PX X 20 PX
+FRANJA ABAJO -> LOSAS RECTAS // CUADRADOS // DE COLOR ROJO // 30% ANCHO TOTAL // 30PX 30PX
+
+SOLO SE PUEDE USAR UN COMPONENTES LLAMADO LOSA -> APRENDIZAJE -> CONTAINER -> LOSA COMPONENTE BASE
+
+CONTAINER -> LÓGICA DE NEGOCIO -> ADELANTO ARRAYS ->
+
+PREPARADO PARA LOS CAMBIOS

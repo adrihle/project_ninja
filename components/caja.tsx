@@ -32,7 +32,7 @@ const Bombilla = ({
   };
 
   return (
-    <div className="bg-slate-800" style={{ border: "1px solid black" }}>
+    <div style={{ border: "1px solid black" }}>
       <div>Casquillo</div>
       <div style={{ backgroundColor: color }}>Cristal</div>
       <div onClick={onClick}>Cable</div>

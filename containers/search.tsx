@@ -1,7 +1,6 @@
 "use server";
 
 import { search } from "@/app/actions";
-import { SendOutlined } from "@ant-design/icons";
 
 const Search = () => {
   return (
@@ -15,15 +14,6 @@ const Search = () => {
 
           <div className="flex justify-center items-center gap-2 border border-white px-3 py-3 rounded-lg">
             <input className="text-white" type="submit" />
-
-            <SendOutlined
-              style={{
-                display: "flex",
-                justifyContent: "center",
-                alignItems: "center",
-                color: "white",
-              }}
-            />
           </div>
         </form>
       </div>
