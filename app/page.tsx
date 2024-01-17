@@ -7,6 +7,7 @@ import { getVideos } from "./actions";
 import { Pagination, Tabs } from "@/components";
 import { ConfigProvider } from "antd";
 import { redirect } from "next/navigation";
+import CenteredPagination from "@/components/centeredPagination";
 
 type PageParams = {
   searchParams: {
@@ -54,16 +55,19 @@ const Page = async (props: PageParams) => {
                 <>
                   {channel ? (
                     <main className="container mx-auto py-32 px-8">
-                      <div className="grid lg:grid-cols-3  md:grid-cols-2 grid-cols-1 gap-6 ">
-                        {videos.map((videoInfo) => (
-                          <VideoInfo key={videoInfo.name} {...videoInfo} />
-                        ))}
+                      <div className="grid lg:grid-cols-5  md:grid-cols-2 grid-cols-1 gap-6 ">
+                        {videos &&
+                          videos.map((videoInfo) => (
+                            <VideoInfo key={videoInfo.name} {...videoInfo} />
+                          ))}
                       </div>
-                      <Pagination
-                        simple
-                        total={maxItems}
-                        current={Number(page)}
-                      />
+                      <CenteredPagination>
+                        <Pagination
+                          simple
+                          total={maxItems}
+                          current={Number(page)}
+                        />
+                      </CenteredPagination>
                     </main>
                   ) : (
                     <div>Busque canal</div>

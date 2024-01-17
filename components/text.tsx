@@ -5,8 +5,7 @@ type TextProps = {
 const Text = ({ text }: TextProps) => {
   return (
     <>
-      <p className=" text-lg text-gray-100">{text} </p>
-      <p className=" text-lg text-gray-100">{text} </p>
+      <p className=" text-lg text-gray-100z">{text} </p>
     </>
   );
 };
