@@ -85,7 +85,7 @@ const Page = async (props: PageParams) => {
               label: "Channel Stats",
               children: (
                 <>
-                  <ChannelStats />
+                  <ChannelStats channelStats={channelStats}/>
                 </>
               ),
             },

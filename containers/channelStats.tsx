@@ -1,6 +1,8 @@
 const ChannelStats = ({ channelStats }: any) => {
   return (
-  <div>{channelStats}</div>
+  <div>
+      <pre>{JSON.stringify(channelStats, null, 2)}</pre>
+    </div>
   )
 };
 
