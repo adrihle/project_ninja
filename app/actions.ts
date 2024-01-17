@@ -2,6 +2,7 @@
 
 import { redirect } from "next/navigation";
 import { VIDEOS, CHANNEL_STATS } from "./mock";
+import crypto from 'crypto';
 
 const MAX_VIDEO_PER_PAGE = 10 as const;
 const CREDENTIALS = {
@@ -18,6 +19,12 @@ export async function login(formData: FormData) {
   }
 }
 
+const generateHashMd5 = (name: string) => {
+  const md5hash = crypto.createHash('md5');
+  md5hash.update(name);
+  return md5hash.digest('hex');
+};
+
 function createVideoChunks(videos: (typeof VIDEOS)) {
   const result = [];
   for (let i = 0; i < videos.length; i += MAX_VIDEO_PER_PAGE) {
@@ -32,14 +39,16 @@ const postprocessVideoInfo = (videos: (typeof VIDEOS)) => {
     return {
       ...video,
       image: video.image.replace('*', `${index}`),
+      hashmd5: generateHashMd5(video.name),
     };
   });
 };
 
 export async function getVideos({ page }: any) {
   const chunks = createVideoChunks(VIDEOS);
+  const initialPage = (page && page > 1) ? page - 1 : 0;
   return {
-    videos: postprocessVideoInfo(chunks[page-1]),
+    videos: postprocessVideoInfo(chunks[initialPage]),
     channelStats: CHANNEL_STATS,
     page,
     maxItems: VIDEOS.length,
