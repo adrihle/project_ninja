@@ -1,23 +1,34 @@
 "use client";
 
-import { Field, PasswordField } from "@/components";
+import { Button, Field, PasswordField } from "@/components";
+import Form from 'antd/es/form';
+import { useTransition } from "react";
 
 const Login = () => {
-  return (
-    <div
-      className="  min-h-screen flex justify-center items-center"
-      style={{ backgroundColor: "#1a237e" }}
-    >
-      <h3 className="text-3xl h-10 text-white">Login</h3>
-      <div className="  border-2 mx-auto w-80 h-80 flex flex-col items-center justify-around">
-        <div className="text-white">Bienvenido Ceo</div>
-        <form action="" className="w-80  flex justify-center flex-col">
-          <Field />
-          <PasswordField />
+  const [pending, start] = useTransition();
 
-          <input type="text" value="Acceder" />
-        </form>
-      </div>
+  const onFinish = async (data: any) => {
+    start(async () => {
+    console.log({ data });
+    });
+  };
+
+  return (
+    <div className="min-h-screen flex justify-center items-center flex-col">
+      <Form onFinish={onFinish}>
+        <div className="w-56 flex justify-center items-center flex-col">
+          <h3 className="text-3xl h-10 text-white">Login</h3>
+          <Form.Item name="username">
+            <Field />
+          </Form.Item>
+          <Form.Item name="password">
+            <PasswordField />
+          </Form.Item>
+          <Form.Item>
+            <Button type="primary" htmlType="submit" loading={pending}>Submit</Button>
+          </Form.Item>
+        </div>
+      </Form>
     </div>
   );
 };
