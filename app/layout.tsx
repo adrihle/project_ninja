@@ -13,7 +13,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body style={{ backgroundColor: 'beige' }}>{children}</body>
+      <body style={{ backgroundColor: "#1a237e" }}>{children}</body>
     </html>
   );
 }
