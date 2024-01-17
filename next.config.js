@@ -2,12 +2,12 @@
 const nextConfig = {
   images: {
     domains: [
-      'evolving-digital.com'
+      'picsum.photos'
     ],
     remotePatterns: [
       {
         protocol: 'https',
-        hostname: 'evolving-digital.com',
+        hostname: 'picsum.photos',
         port: '',
         pathname: '**',
       },

@@ -6,18 +6,25 @@ import { Search, VideoInfo } from "@/containers";
 import { getVideos } from "./actions";
 import { Pagination, Tabs } from "@/components";
 import { ConfigProvider } from "antd";
+import { redirect } from "next/navigation";
 
 type PageParams = {
   searchParams: {
     page: string;
     channel: string;
+    auth: boolean;
   };
 };
 
 const Page = async (props: PageParams) => {
   const {
-    searchParams: { page, channel },
+    searchParams: { page, channel, auth },
   } = props;
+
+  if (!auth) {
+    redirect('/login');
+  }
+
   const { videos, maxItems } = await getVideos({ channel, page });
 
   return (
