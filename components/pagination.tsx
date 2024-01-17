@@ -14,7 +14,7 @@ const Pagination = (props: PaginationProps) => {
     setQuery({ page });
   }
 
-  return <BasePaginate {...props} onChange={onChange} current={current} showSizeChanger={false}/>
+  return <div className="flex justify-center pt-16"><BasePaginate {...props} onChange={onChange} current={current} showSizeChanger={false}/></div>
 }
 
 export default Pagination;

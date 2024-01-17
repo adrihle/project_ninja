@@ -52,8 +52,7 @@ const VIDEOS = [
 const CHANNEL_STATS = {
   channelCreationDate: '2019-01-10',
   totalVisits: 500000,
-  totalUploadedVideos: 80,
-  channelTimeline: 3,
+  totalUploadedVideos: VIDEOS.length,
   channelTags: ['Travel', 'Adventure', 'Culture', 'Explore', 'Vacation'],
 };
 

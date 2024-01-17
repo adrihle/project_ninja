@@ -31,7 +31,7 @@ const VideoInfo = ({ name, date, visits, hashmd5, image }: VideoInfoProps) => {
         <p className=" text-lg  font-normal text-gray-100">{date}</p>
 
         {/* ----------------- */}
-        <Text text={visits}></Text>
+        <Text text={`Visits: ${visits}`}></Text>
         <Text text={hashmd5}></Text>
       </div>
     </Card>

@@ -3,13 +3,24 @@
 import { Button, Field, PasswordField } from "@/components";
 import Form from 'antd/es/form';
 import { useTransition } from "react";
+import { login } from "../actions";
+
+type SubmitData = {
+  username: string,
+  password: string,
+}
 
 const Login = () => {
+  // HOOK DE REACT (FUNCIONALIDAD QUE USE EN COMPONENTES CLIENT) PARA CONTROLAR
+  // PETICIONES ASINCRONAS
+  // PENDING ES UNA VARIABLE BOOLEANA QUE CONTROLA CUANDO SE FINALIZA LA PETIICON ASINCRONA
+  // START ES UNA FUNCION QUE WRAPEAR LA FUNCION QUE QUERAMOS USAR, ES UN EMBOLTORIO, PARA LA FUNCION QUE
+  // QUEREMOS USAR, 
   const [pending, start] = useTransition();
 
-  const onFinish = async (data: any) => {
+  const onFinish = async (data: SubmitData) => {
     start(async () => {
-    console.log({ data });
+      await login(data);
     });
   };
 

@@ -2,30 +2,37 @@
 
 import "@/styles/globals.css";
 
-import { Search, VideoInfo } from "@/containers";
+import { ChannelStats, Search, VideoInfo } from "@/containers";
 import { getVideos } from "./actions";
 import { Pagination, Tabs } from "@/components";
 import { ConfigProvider } from "antd";
 import { redirect } from "next/navigation";
-import CenteredPagination from "@/components/centeredPagination";
 
 type PageParams = {
   searchParams: {
     page: string;
     channel: string;
-    auth: boolean;
+    auth: string;
   };
 };
 
 const Page = async (props: PageParams) => {
+  // AQUI SACAMOS LOS PARAMETROS DE BUSQUEDA (QUERY PARAM) DE LA URL
+  // Y LOS ASIGNAMOS A VARIABLES, PAGE, CHANNEL, AUTH
   const {
     searchParams: { page, channel, auth },
   } = props;
 
-  if (!auth) {
+  // FORMA PROVISIONAL PARA CONTROLAR SI EL USUARIO ESTA AUNTENTICADO O NO
+  // ESTO ES UN APAÑO PARA LA PRUEBA, SE HARIA DE OTRA FORMA EN SITUACIONES REALES
+  // PORQUE NO LO HICIMOS ASI? PORQUE SIEMPRE ES UNA FUNCIONALIDAD QUE SOLO SE HACE UNA VEZ
+  // EN LA APLICACION Y TENIA MAS SENTIDO CENTRARNOS EN OTRAS COSAS
+  if (!JSON.parse(auth)) {
+    // SI EL USUARIO NO ESTA AUNTENTICADO, REDIRIGIMOS AL LOGIN
     redirect('/login');
   }
 
+  // LLAMAMOS AL ACTION
   const { videos, maxItems, channelStats } = await getVideos({ channel, page });
 
   return (
@@ -61,13 +68,11 @@ const Page = async (props: PageParams) => {
                             <VideoInfo key={videoInfo.name} {...videoInfo} />
                           ))}
                       </div>
-                      <CenteredPagination>
-                        <Pagination
-                          simple
-                          total={maxItems}
-                          current={Number(page)}
-                        />
-                      </CenteredPagination>
+                      <Pagination
+                        simple
+                        total={maxItems}
+                        current={Number(page)}
+                      />
                     </main>
                   ) : (
                     <div>Busque canal</div>
@@ -79,8 +84,8 @@ const Page = async (props: PageParams) => {
               key: "2",
               label: "Channel Stats",
               children: (
-              <>
-                  <pre>{JSON.stringify(channelStats, null, 2)}</pre>
+                <>
+                  <ChannelStats />
                 </>
               ),
             },
