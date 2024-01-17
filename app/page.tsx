@@ -25,7 +25,7 @@ const Page = async (props: PageParams) => {
     redirect('/login');
   }
 
-  const { videos, maxItems } = await getVideos({ channel, page });
+  const { videos, maxItems, channelStats } = await getVideos({ channel, page });
 
   return (
     <div>
@@ -74,7 +74,11 @@ const Page = async (props: PageParams) => {
             {
               key: "2",
               label: "Channel Stats",
-              children: <div>Channel stats</div>,
+              children: (
+              <>
+                  <pre>{JSON.stringify(channelStats, null, 2)}</pre>
+                </>
+              ),
             },
           ]}
         />
