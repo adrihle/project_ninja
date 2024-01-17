@@ -6,6 +6,7 @@ import { Search, VideoInfo } from "@/containers";
 import { getVideos } from "./actions";
 import { Pagination, Tabs } from "@/components";
 import { ConfigProvider } from "antd";
+import CenteredPagination from "@/components/centeredPagination";
 
 type PageParams = {
   searchParams: {
@@ -52,11 +53,13 @@ const Page = async (props: PageParams) => {
                           <VideoInfo key={videoInfo.name} {...videoInfo} />
                         ))}
                       </div>
-                      <Pagination
-                        simple
-                        total={maxItems}
-                        current={Number(page)}
-                      />
+                      <CenteredPagination>
+                        <Pagination
+                          simple
+                          total={maxItems}
+                          current={Number(page)}
+                        />
+                      </CenteredPagination>
                     </main>
                   ) : (
                     <div>Busque canal</div>
