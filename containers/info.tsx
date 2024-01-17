@@ -1,5 +1,6 @@
 "use client";
 
+import Card from "@/components/card";
 import Text from "@/components/text";
 import Title from "@/components/title";
 import "@/styles/globals.css";
@@ -16,7 +17,7 @@ type VideoInfoProps = {
 
 const VideoInfo = ({ name, date, visits, hashmd5, image }: VideoInfoProps) => {
   return (
-    <div className="shadow-lg rounded-lg border border-white ">
+    <Card>
       <Image
         src={image}
         alt=""
@@ -33,7 +34,7 @@ const VideoInfo = ({ name, date, visits, hashmd5, image }: VideoInfoProps) => {
         <Text text={visits}></Text>
         <Text text={hashmd5}></Text>
       </div>
-    </div>
+    </Card>
   );
 };
 
